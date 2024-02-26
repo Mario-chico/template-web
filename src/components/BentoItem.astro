@@ -1,0 +1,18 @@
+---
+import { lazy } from "astro/zod";
+import { Image } from "astro:assets";
+
+interface Props {
+  description: string;
+  class?: string;
+}
+
+const {  description } = Astro.props
+---
+
+
+<article class={`${Astro.props.class}`}>
+  <h1></h1>
+  <h3></h3>
+  <Image src="/logo.webp" alt={description} width={400} height={400} loading={"lazy"}/>
+</article>
