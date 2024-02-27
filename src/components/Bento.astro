@@ -1,10 +1,84 @@
 ---
+import { Image } from "astro:assets";
 import BentoItem from "./BentoItem.astro";
 ---
 
-<section class="h-auto grid grid-rows-4 grid-cols-10 ">
-  <BentoItem description="Atletas altamente determinados a ganar" class="col-span-4 row-span-2"/>
-  <BentoItem description="compitiendo por chingo de varo" />
-  <BentoItem description="En el cenit de los mayas" />
-  <BentoItem description="Con un calor infernal" />
+<section
+  class={`
+    w-full
+    grid grid-cols-10 auto-rows-[35rem] gap-4
+    mx-auto p-5 sm:p-20
+    `}
+>
+  <BentoItem
+    title="Compitiendo por chingo de varo"
+    class="col-span-10 lg:col-span-4 flex flex-col items-center"
+  >
+    <div
+      slot="image"
+      class="absolute w-full h-full
+  bg-center bg-cover bg-no-repeat bg-blend-luminosity
+  group-hover:scale-105 transition-scale duration-1000 ease-in-out
+  opacity-90 -z-10"
+      style="background-image: url('/active.webp')"
+    >
+    </div>
+    <p slot="content" class="text-white">
+      Este año se compite por una bolsa de más de <strong class="text-white"
+        >5 millones de dolares.</strong
+      >
+    </p>
+  </BentoItem>
+  <BentoItem
+    title="Atletas altamente determinados a ganar"
+    subtitle="Y todos me la van a pelar"
+    class="col-span-10 lg:col-span-6 flex flex-col items-center"
+  >
+    <div
+      slot="image"
+      class="absolute w-full h-full
+      bg-center bg-cover bg-no-repeat bg-blend-luminosity
+      group-hover:scale-105 transition-scale duration-1000 ease-in-out
+      opacity-90 -z-10"
+      style="background-image: url('/winners.webp');"
+    >
+    </div>
+
+    <p slot="content" class="max-w-xl text-pretty">
+      <strong
+        >El primer lugar se lleva $100,000, patrocinio de Adidas, un año de
+        fisioterapia y acceso a baños de hielo y sauna, además un todo pagado en
+        el caribe por una semana con un acompañante.</strong
+      >
+    </p>
+  </BentoItem>
+  <BentoItem
+    title="exploto mi termostatoCon un calor infernal"
+    subtitle="Ya se los cargo el payaso"
+    class="col-span-10 lg:col-span-6 flex flex-col items-center"
+  >
+    <div
+      slot="image"
+      class="absolute w-full h-full
+      bg-center bg-cover bg-no-repeat bg-blend-luminosity
+      group-hover:scale-105 transition-scale duration-1000 ease-in-out
+      opacity-90 -z-10"
+      style="background-image: url('/femwinners.webp')"
+    >
+    </div>
+  </BentoItem>
+  <BentoItem
+    title="Yo hago que funcione"
+    class="col-span-10 lg:col-span-4 flex flex-col items-center"
+  >
+    <div
+      slot="image"
+      class="absolute w-full h-full
+      bg-center bg-cover bg-no-repeat bg-blend-luminosity
+      group-hover:scale-105 transition-scale duration-1000 ease-in-out
+      opacity-90 -z-10"
+      style="background-image: url('/bars.webp')"
+    >
+    </div>
+  </BentoItem>
 </section>

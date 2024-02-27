@@ -1,18 +1,51 @@
 ---
-import { lazy } from "astro/zod";
-import { Image } from "astro:assets";
-
 interface Props {
-  description: string;
+  title: string;
   class?: string;
+  subtitle?: string;
 }
 
-const {  description } = Astro.props
+const { title, subtitle } = Astro.props;
 ---
 
-
-<article class={`${Astro.props.class}`}>
-  <h1></h1>
-  <h3></h3>
-  <Image src="/logo.webp" alt={description} width={400} height={400} loading={"lazy"}/>
+<article
+  class={`
+  ${Astro.props.class}
+  relative rounded-xl 
+  backdrop-blur-md 
+  border border-black/10
+  shadow-inner shadow-red-600/70
+  overflow-hidden
+  group
+  `}
+>
+  <!-- Por debajo del texto pero por encima de la imagen -->
+  <div
+    class="absolute z-10 bottom-0 top-0 w-full h-full
+bg-gradient-to-b from-transparent from-40% via-black/60 to-black/80"
+  >
+  </div>
+  <slot name="image" />
+  <div
+    class="relative h-full select-none flex flex-col justify-end gap-2 p-6 text-lg z-20"
+  >
+    <h2 class="text-3xl font-bold text-balance mb-4 text-orange-500/90">
+      {title}
+    </h2>
+    {
+      subtitle && (
+        <h3 class="text-xl font-semibold text-sky-600/50 text-balance mb-4">
+          {subtitle}
+        </h3>
+      )
+    }
+    <slot name="content" />
+  </div>
+  <!-- <Image
+    src="/logo.webp"
+    alt={title}
+    width={400}
+    height={400}
+    loading={"lazy"}
+  /> -->
 </article>
