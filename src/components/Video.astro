@@ -1,13 +1,19 @@
 <div class="w-full relative">
-  <p class="absolute top-10 z-10 w-96 text-white m-auto left-0 right-0">
-    Estamos bien cabrones, contratanos ya alv no le pienses mucho
-  </p>
+  <div class="absolute inset-10 z-10 w-3/4 text-white m-auto text-center">
+    <h1 class="font-bold text-5xl md:text-8xl text-balance">Bʼatz clash</h1>
+    <p class="font-medium">
+      Nos estamos preparando para el evento deportivo más impactante del año
+    </p>
+  </div>
   <video
-    class="w-full h-screen object-cover animate-fade animate-duration-1000"
-    src="/video.mp4"
     autoplay
-    muted
     loop
+    muted
+    playsinline
+    class="w-full h-screen object-cover animate-fade animate-duration-1000"
+    preload="metadata"
     style="clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 50% 100%, 0 80%, 0 0);"
-  ></video>
+  >
+    <source src="/video.webm" type="video/webm" />
+  </video>
 </div>
