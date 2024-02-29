@@ -1,0 +1,15 @@
+<div
+  style=`${Astro.props.style} clip-path: polygon(50% 0%, 100% 0, 100% 80%, 50% 100%, 50% 100%, 0 80%, 0 0); `
+  class="relative bg-no-repeat bg-cover w-full h-[80vh]"
+>
+  <div
+    class="absolute z-10 bottom-0 top-0 w-full h-full
+bg-gradient-to-b from-transparent from-20% via-black/80 to-black/90"
+  >
+  </div>
+  <div
+    class="absolute z-20 flex flex-col w-full h-full inset-0 justify-center items-center m-auto"
+  >
+    <slot />
+  </div>
+</div>
