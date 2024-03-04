@@ -1,23 +1,29 @@
-<section class="w-full h-96 flex flex-col justify-center items-center">
-  <h2 class="text-5xl font-semibold mb-10">El evento en números</h2>
-  <div class="flex flex-row gap-x-5 text-center">
-    <div>
-      <p class="text-6xl">
-        <span class="font-bold">700</span>
-      </p>
-      <p>Noticias en todo el mundo</p>
+---
+import { CountUp } from "./CountUp";
+---
+
+<section class="max-w-6xl py-20">
+  <h2 class="text-5xl font-semibold mb-10 md:mb-14 text-center text-balance">
+    El evento en números
+  </h2>
+  <div class="grid grid-cols-1 gap-y-4 md:grid-cols-3">
+    <div class="flex flex-col justify-center items-center">
+      <span class="text-6xl font-bold tabular-nums tracking-normal"
+        ><CountUp client:visible initial={0} final={700} /></span
+      >
+      <span>Noticias en todo el mundo</span>
     </div>
-    <div>
-      <p class="text-6xl">
-        +<span class="font-bold">500</span>K
-      </p>
-      <p>de visulizaciones</p>
+    <div class="flex flex-col justify-center items-center">
+      <span class="text-6xl font-bold tabular-nums"
+        ><CountUp client:visible initial={0} final={500} />K</span
+      >
+      <span>de visulizaciones</span>
     </div>
-    <div>
-      <p class="text-6xl">
-        <span class="font-bold">5</span>M$
-      </p>
-      <p>en bolsa de premios</p>
+    <div class="flex flex-col justify-center items-center">
+      <span class="text-6xl font-bold tabular-nums"
+        ><CountUp client:visible initial={0} final={5.6} decimals={1} />M$</span
+      >
+      <span>en bolsa de premios</span>
     </div>
   </div>
 </section>
