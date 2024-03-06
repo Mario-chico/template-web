@@ -20,10 +20,9 @@ const i18n = getI18N({ currentLocale });
   />
   <h1 class="tracking-wide text-5xl font-bold text-wrap">
     {i18n.INTRO_TITLE}
-    <h1>
-      <p set:html={i18n.INTRO_DESCRIPTION1} />
-      <p set:html={i18n.INTRO_DESCRIPTION2} />
-      <p set:html={i18n.INTRO_DESCRIPTION3} />
-    </h1>
   </h1>
+
+  <p set:html={i18n.INTRO_DESCRIPTION1} />
+  <p set:html={i18n.INTRO_DESCRIPTION2} />
+  <p set:html={i18n.INTRO_DESCRIPTION3} />
 </section>

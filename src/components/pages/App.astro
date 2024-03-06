@@ -5,23 +5,19 @@ import Intro from "@/components/Intro.astro";
 import Bento from "@/components/Bento.astro";
 import PreFooter from "@/components/PreFooter.astro";
 
-import {getI18N} from '@/i18n/'
+import { getI18N } from "@/i18n/";
 
-const {currentLocale} = Astro
+const { currentLocale } = Astro;
 
-const i18n = getI18N({currentLocale})
+const i18n = getI18N({ currentLocale });
 ---
 
-<Layout
-  title={i18n.SEO_TITLE}
-  description={i18n.SEO_DESCRIPTION}
->
-  <main>
+<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
+  <main data-barba="container" data-barba-namespace="home">
     <Video />
     <Intro />
     <Bento />
     <PreFooter />
   </main>
 </Layout>
-
 <style></style>

@@ -1,24 +1,27 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import HeroContainer from "@/components/HeroContainer.astro";
-import Button from "@/components/Button.astro";
+import Button from "@/components/Button.tsx";
 import Numeros from "@/components/Numeros.astro";
+import Galeria from "@/components/Galeria.tsx";
 
 import { getI18N } from "@/i18n/";
 
 const { currentLocale } = Astro;
 
 const i18n = getI18N({ currentLocale });
+const edicion = "1";
 ---
 
 <Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
   <HeroContainer style="background-image: url('/bars.webp');">
     <h1 class="text-5xl mb-20 uppercase">Eventos anteriores</h1>
-    <Button class="animate-fade-up" url="www.youtube.com">
+    <Button className="animate-fade-up" url="www.youtube.com">
       Revive el ultimo evento
     </Button>
   </HeroContainer>
-  <main>
+  <main data-barba="container">
+    <Galeria i18n={i18n} edicion={edicion} client:load />
     <Numeros />
   </main>
 </Layout>
