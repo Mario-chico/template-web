@@ -3,14 +3,22 @@ import { fade } from "astro:transitions";
 ---
 
 <div class="w-full relative">
-  <div class="absolute inset-10 z-10 w-3/4 text-white m-auto text-center">
-    <h1 class="font-bold text-5xl md:text-8xl text-balance">Bʼatz clash</h1>
-    <p
-      class="font-medium animated-box"
-      transition:animate={fade({ duration: "6s" })}
-    >
-      Nos estamos preparando para el evento deportivo más impactante del año
-    </p>
+  <div
+    class="absolute inset-0 z-10 w-full md:h-[80vw] dvh xl:h-full md:aspect-video m-auto flex justify-center items-center"
+  >
+    <section class="absolute flex flex-col items-center gap-8 max">
+      <h1
+        class="font-bold text-4xl md:text-8xl text-balance uppercase md:tracking-widest animate-fade-up"
+      >
+        desert battles mx
+      </h1>
+      <p
+        class="font-medium animated-box text-wrap text-xl text-center"
+        transition:animate={fade({ duration: "6s" })}
+      >
+        Nos estamos preparando para el evento deportivo más impactante del año
+      </p>
+    </section>
   </div>
   <video
     autoplay
